@@ -38,14 +38,16 @@ const Deatails = () => {
     <div>
         
       {filteredData.map((e ,index) => (
-        <div key={index}>
+        <div  className="mt-5" key={index}>
             
-          <img className="m-auto" src={e.images[0].url} alt="" />
-          <p>{e.restaurant_name}</p>
-          <p>{e.location?.location_address_2}</p>
-          <p>{e.merchant_payment_methods}</p>
-
+          <img className="m-auto   w-[90%] md:w-[70%] h-[500px] mt-5 rounded-xl" src={e.images[0].url} alt="" />
+          <div className="flex flex-col items-center justify-center mt-1 ">
+          <p  className="font-serif text-2xl font-bold text-gray-500">{e.restaurant_name}</p>
+          <p className="text-xl font-semibold text-green-500">{e.location?.location_address_2}</p>
+          <p className="text-lg font-semibold text-red-300 font">{e.merchant_payment_methods}</p>
           <p>Opens at: {e.opens_at}</p>
+          </div>
+          
         </div>
       ))}
     </div>
